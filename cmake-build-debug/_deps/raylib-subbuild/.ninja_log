@@ -1,0 +1,21 @@
+# ninja log v6
+2	78	7551293968645966	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-mkdir	9568bbbf63423c2e
+2	78	7551293968645966	C:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-mkdir	9568bbbf63423c2e
+6873	6961	7551294037448052	C:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-update	a9d0be584c7b74f6
+6962	7033	7551294038165025	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-patch	3f15cb40244bfc5d
+79	6873	7551294036520214	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-download	1d170a72d73d9bbf
+79	6873	7551294036520214	C:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-download	1d170a72d73d9bbf
+6873	6961	7551294037448052	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-update	a9d0be584c7b74f6
+6962	7033	7551294038165025	C:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-patch	3f15cb40244bfc5d
+7033	7112	7551294038978003	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-configure	d3a7a01674abb8f2
+7033	7112	7551294038978003	C:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-configure	d3a7a01674abb8f2
+7247	7310	7551294040946040	C:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-test	d8a978fa272a0f74
+7112	7178	7551294039641590	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-build	cc3e8ddf7c7350be
+7112	7178	7551294039641590	C:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-build	cc3e8ddf7c7350be
+7178	7247	7551294040347040	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-install	c82a36ad6f79b6ae
+7178	7247	7551294040347040	C:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-install	c82a36ad6f79b6ae
+7247	7310	7551294040946040	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-test	d8a978fa272a0f74
+7310	7412	7551294041971960	CMakeFiles/raylib-populate-complete	38656ba4f04ecfbd
+7310	7412	7551294041971960	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-done	38656ba4f04ecfbd
+7310	7412	7551294041971960	C:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug/_deps/raylib-subbuild/CMakeFiles/raylib-populate-complete	38656ba4f04ecfbd
+7310	7412	7551294041971960	C:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-done	38656ba4f04ecfbd
