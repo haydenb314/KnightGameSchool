@@ -57,6 +57,14 @@ build CMakeFiles/KnightGameSchool.dir/main.cpp.obj: CXX_COMPILER__KnightGameScho
   OBJECT_DIR = CMakeFiles\KnightGameSchool.dir
   OBJECT_FILE_DIR = CMakeFiles\KnightGameSchool.dir
 
+build CMakeFiles/KnightGameSchool.dir/Knight.cpp.obj: CXX_COMPILER__KnightGameSchool_unscanned_Debug C$:/Users/307022419/CLionProjects/KnightGameSchool/Knight.cpp || cmake_object_order_depends_target_KnightGameSchool
+  DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = CMakeFiles\KnightGameSchool.dir\Knight.cpp.obj.d
+  FLAGS = -std=c++11 -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug/_deps/raylib-src/src -IC:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = CMakeFiles\KnightGameSchool.dir
+  OBJECT_FILE_DIR = CMakeFiles\KnightGameSchool.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target KnightGameSchool
@@ -65,7 +73,7 @@ build CMakeFiles/KnightGameSchool.dir/main.cpp.obj: CXX_COMPILER__KnightGameScho
 #############################################
 # Link the executable KnightGameSchool.exe
 
-build KnightGameSchool.exe: CXX_EXECUTABLE_LINKER__KnightGameSchool_Debug CMakeFiles/KnightGameSchool.dir/main.cpp.obj | _deps/raylib-build/raylib/libraylib.a || _deps/raylib-build/raylib/external/glfw/src/glfw _deps/raylib-build/raylib/libraylib.a
+build KnightGameSchool.exe: CXX_EXECUTABLE_LINKER__KnightGameSchool_Debug CMakeFiles/KnightGameSchool.dir/main.cpp.obj CMakeFiles/KnightGameSchool.dir/Knight.cpp.obj | _deps/raylib-build/raylib/libraylib.a || _deps/raylib-build/raylib/external/glfw/src/glfw _deps/raylib-build/raylib/libraylib.a
   FLAGS = -std=c++11 -g
   LINK_LIBRARIES = _deps/raylib-build/raylib/libraylib.a  -lopengl32  -lglu32  -lwinmm  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\KnightGameSchool.dir

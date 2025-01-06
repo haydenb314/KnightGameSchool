@@ -7,6 +7,12 @@
 },
 {
   "directory": "C:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\G__~1.EXE -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -IC:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug/_deps/raylib-src/src -IC:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug/_deps/raylib-src/src/external/glfw/include  -std=c++11 -g -fdiagnostics-color=always -o CMakeFiles\\KnightGameSchool.dir\\Knight.cpp.obj -c C:\\Users\\307022419\\CLionProjects\\KnightGameSchool\\Knight.cpp",
+  "file": "C:\\Users\\307022419\\CLionProjects\\KnightGameSchool\\Knight.cpp",
+  "output": "CMakeFiles\\KnightGameSchool.dir\\Knight.cpp.obj"
+},
+{
+  "directory": "C:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug",
   "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -D_CRT_SECURE_NO_WARNINGS -IC:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug/_deps/raylib-src/src -isystem C:/Users/307022419/CLionProjects/KnightGameSchool/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=gnu99 -fdiagnostics-color=always -o _deps\\raylib-build\\raylib\\CMakeFiles\\raylib.dir\\raudio.c.obj -c C:\\Users\\307022419\\CLionProjects\\KnightGameSchool\\cmake-build-debug\\_deps\\raylib-src\\src\\raudio.c",
   "file": "C:\\Users\\307022419\\CLionProjects\\KnightGameSchool\\cmake-build-debug\\_deps\\raylib-src\\src\\raudio.c",
   "output": "_deps\\raylib-build\\raylib\\CMakeFiles\\raylib.dir\\raudio.c.obj"
