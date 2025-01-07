@@ -12,6 +12,11 @@ public:
     Knight();
     void drawKnight();
 
+    void moveRight();
+    void moveLeft();
+    void jump();
+    void crouch();
+
 private:
     Texture2D knightSheet{};
 
@@ -40,11 +45,11 @@ private:
     AnimationStruct runAnimation{};
     AnimationStruct currentAnimation{};
 
-    float currentX;
-    float currentY;
+    float currentX{};
+    float currentY{};
 
-    float gravity;
-    float velocityY;
+    float gravity{};
+    float velocityY{};
 
 };
 

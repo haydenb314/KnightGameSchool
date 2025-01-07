@@ -49,14 +49,20 @@ Knight::Knight() {
     currentAnimation.maxFrames = 10;
 
     //position
-    float currentX = 0;
-    float currentY = 300;
+    currentX = 0;
+    currentY = 300;
 
     //jump physics
-    float gravity = 500;
-    float velocityY = 0;
+    gravity = 500;
+    velocityY = 0;
 }
 
+//movement methods
+
+
+
+
+//method that draws knight sprite
 void Knight::drawKnight() {
 
         timer += GetFrameTime();
