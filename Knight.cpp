@@ -12,9 +12,8 @@ Knight::Knight() {
     frameWidth = static_cast<float>(knightSheet.width) / 12;
     frameHeight = static_cast<float>(knightSheet.height) / 30;
 
-    //flips knight animation when moving backwards
+    //holds current direction knight is facing
     currentFrameWidth = frameWidth;
-    flippedFrameWidth = -frameWidth;
 
     //timer
     timer = 0.f;
@@ -53,93 +52,122 @@ Knight::Knight() {
     currentY = 300;
 
     //jump physics
-    gravity = 500;
+    gravity = 1200;
     velocityY = 0;
+
+    isGrounded = true;
+    isFlipped = false;
+
+    animationPlaying = false;
 }
 
-//movement methods
-
-
+//method that plays animation
+void Knight::playAnimation(AnimationStruct animation_struct) {
+    currentAnimation = animation_struct;
+    while (frame < animation_struct.maxFrames) {
+        animationPlaying = true;
+    }
+    animationPlaying = false;
+}
 
 
 //method that draws knight sprite
 void Knight::drawKnight() {
+    timer += GetFrameTime();
 
-        timer += GetFrameTime();
-
-        if (timer >= timePerFrame) {
-            timer = 0.0f;
-            frame += 1;
-        }
-
-        frame = frame % currentAnimation.maxFrames;
-
-        velocityY += GetFrameTime() * gravity;
-        currentY += GetFrameTime() * velocityY;
-
-        if (IsKeyPressed(KEY_W)) {
-            velocityY = -300;
-            timePerFrame = .12;
-            currentAnimation = jumpAnimation;
-        } else if (IsKeyDown(KEY_D)) {
-            currentFrameWidth = frameWidth;
-            currentAnimation = runAnimation;
-            if (IsKeyDown(KEY_LEFT_SHIFT)) {
-                currentX += 10;
-                timePerFrame = .08;
-            } else if (IsKeyDown(KEY_S)) {
-                currentX += 4;
-                timePerFrame = .14;
-                currentAnimation = crouch_walkAnimation;
-            } else {
-                currentX += 5;
-                timePerFrame = .12;
-            }
-        } else if (IsKeyDown(KEY_A)) {
-            currentFrameWidth = flippedFrameWidth;
-            currentAnimation = runAnimation;
-            if (IsKeyDown(KEY_LEFT_SHIFT)) {
-                currentX -= 10;
-                timePerFrame = .08;
-            } else if (IsKeyDown(KEY_S)) {
-                currentX -= 4;
-                timePerFrame = .14;
-                currentAnimation = crouch_walkAnimation;
-            } else {
-                currentX -= 5;
-                timePerFrame = .12;
-            }
-        } else if (IsKeyDown(KEY_S)) {
-            currentAnimation = crouchAnimation;
-        } else if (IsKeyDown(KEY_G)) {
-            currentAnimation = attack2Animation;
-            timePerFrame = .12;
-        } else if (IsKeyDown(KEY_H)) {
-            currentAnimation = attackAnimation;
-            timePerFrame = .12;
-        } else {
-            currentAnimation = idleAnimation;
-            timePerFrame = .12;
-        }
-
-        //makes sure knight doesn't fall through floor
-        if (currentY >= 300) {
-            currentY = 300;
-        }
-
-        //keeps knight on screen by sending it to opposite side if offscreen
-        if (currentX >= 1600) {
-            currentX = -300;
-        }
-        if (currentX < -300) {
-            currentX = 1600;
-        }
-
-        DrawTexturePro(
-            knightSheet,
-            Rectangle{ frameWidth * frame, currentAnimation.animationHeight, currentFrameWidth, frameHeight },
-            Rectangle{ currentX, currentY, frameWidth * 5, frameHeight * 5},
-            Vector2{frameWidth / 2, frameHeight / 2},
-            0.f,
-            WHITE);
+    if (timer >= timePerFrame) {
+        timer = 0.0f;
+        frame += 1;
     }
+
+    frame = frame % currentAnimation.maxFrames;
+
+    velocityY += GetFrameTime() * gravity;
+    currentY += GetFrameTime() * velocityY;
+
+    if (IsKeyPressed(KEY_W) && isGrounded) {
+        velocityY = -500;
+        timePerFrame = .12;
+        currentAnimation = jumpAnimation;
+    } else if (IsKeyDown(KEY_D)) {
+        isFlipped = false;
+        currentFrameWidth = frameWidth;
+        currentAnimation = runAnimation;
+        if (IsKeyDown(KEY_LEFT_SHIFT)) {
+            currentX += 10;
+            timePerFrame = .08;
+        } else if (IsKeyDown(KEY_S)) {
+            currentX += 4;
+            timePerFrame = .14;
+            currentAnimation = crouch_walkAnimation;
+        } else {
+            currentX += 5;
+            timePerFrame = .12;
+        }
+    } else if (IsKeyDown(KEY_A)) {
+        isFlipped = true;
+        currentAnimation = runAnimation;
+        if (IsKeyDown(KEY_LEFT_SHIFT)) {
+            currentX -= 10;
+            timePerFrame = .08;
+        } else if (IsKeyDown(KEY_S)) {
+            currentX -= 4;
+            timePerFrame = .14;
+            currentAnimation = crouch_walkAnimation;
+        } else {
+            currentX -= 5;
+            timePerFrame = .12;
+        }
+    } else if (IsKeyDown(KEY_S)) {
+        currentAnimation = crouchAnimation;
+    } else if (IsKeyPressed(KEY_G)) {
+        playAnimation(attack2Animation);
+    } else if (IsKeyDown(KEY_H)) {
+        currentAnimation = attackAnimation;
+        timePerFrame = .12;
+    } else {
+        currentAnimation = idleAnimation;
+        timePerFrame = .12;
+    }
+
+    //makes sure only one animation plays at a time
+    //TODO add action cue (take inputs asynchronously than updating the game)
+    if (animationPlaying) {
+        //don't let another animation play -> code
+    }
+
+    //checks if knight is moving to the left, flips frame
+    if (isFlipped) {
+        currentFrameWidth = -frameWidth;
+    } else {
+        currentFrameWidth = frameWidth;
+    }
+
+    //makes sure knight doesn't fall through floor
+    if (currentY >= 300) {
+        currentY = 300;
+    }
+
+    //checks if the knight is in the air and doesn't allow a double jump
+    if (currentY == 300) {
+        isGrounded = true;
+    } else {
+        isGrounded = false;
+    }
+
+    //keeps knight on screen by sending it to opposite side if offscreen
+    if (currentX >= 1600) {
+        currentX = -300;
+    }
+    if (currentX < -300) {
+        currentX = 1600;
+    }
+
+    DrawTexturePro(
+        knightSheet,
+        Rectangle{ frameWidth * frame, currentAnimation.animationHeight, currentFrameWidth, frameHeight },
+        Rectangle{ currentX, currentY, frameWidth * 5, frameHeight * 5},
+        Vector2{frameWidth / 2, frameHeight / 2},
+        0.f,
+        WHITE);
+}

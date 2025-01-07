@@ -8,15 +8,6 @@
 
 
 class Knight {
-public:
-    Knight();
-    void drawKnight();
-
-    void moveRight();
-    void moveLeft();
-    void jump();
-    void crouch();
-
 private:
     Texture2D knightSheet{};
 
@@ -50,6 +41,27 @@ private:
 
     float gravity{};
     float velocityY{};
+
+    bool isGrounded;
+    bool isFlipped;
+
+    bool animationPlaying;
+
+public:
+    Knight();
+
+    void playAnimation(AnimationStruct);
+
+    void drawKnight();
+
+
+
+    void moveRight();
+    void moveLeft();
+    void jump();
+    void crouch();
+
+
 
 };
 
